@@ -1,0 +1,694 @@
+@import "reset.scss";
+@import "variables.scss";
+@import "mixin.scss";
+
+
+.container {
+    @include container;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 15px;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-logo {
+            h2 {
+                font-size: 22px;
+                letter-spacing: 4.4px;
+                font-weight: 600;
+            }
+
+        }
+
+        .nav-list {
+            display: flex;
+
+            li {
+                font-size: 16px;
+                padding-left: 25px;
+
+
+                a {
+                    text-decoration: none;
+                    color: $main-black;
+                    font-weight: 300;
+                    text-transform: uppercase;
+
+                }
+
+                span {
+                    color: $main-blue;
+                }
+
+            }
+
+            .collection {
+                position: relative;
+
+                .dropdown {
+                    padding-top: 20px;
+                    border-top-style: solid;
+                    border-top-color: $main-blue;
+                    position: absolute;
+                    padding-right: 100px;
+                    display: none;
+                    background-color: white;
+
+                    li {
+                        padding-bottom: 30px;
+                    }
+
+                }
+
+                &:hover .dropdown {
+                    z-index: 2;
+                    display: block;
+                }
+
+            }
+        }
+
+        .nav-icons {
+
+            display: flex;
+            gap: 15px;
+
+            .basket {
+                position: relative;
+
+                span {
+                    position: absolute;
+                    background-color: $main-blue;
+                    color: white;
+                    padding: 3px;
+                    border-radius: 50%;
+                    font-size: 12px;
+                    bottom: 10px;
+                    right: -5px;
+                }
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+    }
+}
+
+#banner {
+    position: relative;
+    background-color: $banner-color;
+    background-repeat: no-repeat;
+
+    .banner {
+        display: flex;
+        align-items: center;
+
+        .banner-image {
+            max-width: 100%;
+
+            img {
+                width: 100%;
+            }
+
+        }
+
+        .banner-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2 {
+                font-size: 64px;
+                letter-spacing: 16px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .banner-price {
+                padding-top: 20px;
+                display: flex;
+                gap: 20px;
+                font-size: 32px;
+
+                h3 {
+                    font-weight: 300;
+                }
+
+                .pricetwo {
+                    color: $main-grey;
+                    text-decoration: line-through;
+
+                }
+
+            }
+
+            .banner-btn {
+                margin-top: 50px;
+
+                button {
+                    padding: 15px 30px;
+                }
+
+                .banner-btn-one {
+                    border: 1px solid $main-blue;
+                    color: $main-blue;
+
+                }
+
+                .banner-btn-two {
+
+                    background-color: $main-blue;
+                    border: 1px solid $main-blue;
+                    color: white;
+                }
+            }
+
+
+
+        }
+    }
+
+
+}
+
+#product {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .product {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .card {
+            border: none;
+            cursor: pointer;
+
+            .product-image {
+                max-width: 100%;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .product-text {
+                text-align: center;
+
+                h4 {
+                    font-size: 24px;
+                    font-weight: 500;
+                    padding-bottom: 15px;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: $main-grey;
+                    padding-bottom: 15px;
+                }
+
+                h5 {
+                    font-size: 24px;
+
+                }
+            }
+
+            .product-button {
+                margin-top: 20px;
+                text-align: center;
+
+                button {
+                    background-color: $main-blue;
+                    padding: 10px 15px;
+                    border: none;
+
+                    a {
+                        color: azure;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+#collection {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .collection {
+        display: flex;
+
+        .collection-image {
+            max-width: 60%;
+
+            img {
+                max-width: 100%;
+
+            }
+        }
+
+        .collection-text {
+            p {
+                letter-spacing: 2.8;
+                font-style: normal;
+            }
+
+            h2 {
+                font-size: 70px;
+                text-transform: uppercase;
+            }
+
+            .collection-btn {
+                margin-top: 50px;
+                text-align: center;
+
+                button {
+                    @include button;
+                    background-color: black;
+                    color: white;
+                    border: none;
+                }
+            }
+
+        }
+
+    }
+}
+
+#denim {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .denim {
+        display: flex;
+
+        .denim-image {
+            max-width: 50%;
+
+            img {
+                max-width: 100%;
+
+            }
+        }
+
+        .denim-text {
+            text-align: center;
+
+            p {
+                letter-spacing: 2.8;
+                font-style: normal;
+            }
+
+            h2 {
+                font-size: 70px;
+                text-transform: uppercase;
+            }
+
+            .collection-btn {
+                margin-top: 50px;
+                text-align: center;
+
+                button {
+                    @include button;
+                    background-color: black;
+                    color: white;
+                    border: none;
+                }
+            }
+
+        }
+
+    }
+}
+
+#carousel {
+    .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        .carousel-box {
+            .carousel-image {
+                max-width: 100%;
+               img{
+                max-width: 100%;
+               }
+            }
+
+        }
+    }
+}
+
+footer {
+    .footer {
+        display: flex;
+        
+        gap: 30px;
+
+        .ul1 {
+            max-width: 20%;
+
+            p {
+                font-size: 16px;
+                color: $main-grey;
+            }
+
+            li {
+                button {
+                    background-color: $main-blue;
+                    padding: 5px;
+                    color: white;
+                    border: none;
+                }
+            }
+
+            .input-div {
+                display: flex;
+
+            }
+        }
+
+        .ul2 {
+            max-width: 100%;
+            
+
+            .ul22 {
+                display: flex;
+             
+
+                li {
+                    color: $main-grey;
+                }
+            }
+        }
+        .ul3{
+            max-width: 40%;
+        }
+
+
+    }
+
+}
+
+#footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .footer-bottom {
+        text-align: center;
+    }
+}
+
+#details {
+    background-color: burlywood;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#add{
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    table{
+        margin-top: 100px;
+        border-collapse: collapse;
+        td,th{
+            border: 1px solid black;
+            padding: 20px;
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        gap: 20px;
+        input{
+            padding: 10px;
+        }
+        #submit{
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 998px) {
+    nav {
+        background-color: $banner-color;
+        position: static;
+
+        .navbar {
+            .nav-list {
+                display: none;
+            }
+
+            .nav-icons {
+                align-items: center;
+
+                .nav-menu {
+                    display: block;
+
+                    i {
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+    }
+
+    #banner {
+        .banner {
+            flex-direction: column;
+            gap: 50px;
+
+            .banner-image {
+                max-width: 80%;
+
+            }
+        }
+    }
+
+    #product {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .product {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+    #collection {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .collection {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+            .collection-image {
+                max-width: 80%;
+
+                img {
+                    max-width: 100%;
+
+                }
+            }
+
+
+
+        }
+
+    }
+
+    #denim {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .denim {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+            .denim-image {
+                max-width: 80%;
+
+                img {
+                    max-width: 100%;
+
+                }
+            }
+
+            .denim-text {
+                width: 100%;
+
+            }
+        }
+
+
+    }
+
+    footer {
+        .footer {
+            display: flex;
+            gap: 30px;
+
+            .ul1 {
+                max-width: 100%;
+
+            }
+
+            .ul2 {
+                max-width: 100%;
+
+
+            }
+
+
+        }
+
+    }
+    footer{
+        .footer{
+            flex-direction: column;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 778px) {
+    #banner {
+        .banner {
+            .banner-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h2 {
+                    font-size: 40px;
+                    letter-spacing: 16px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+
+                .banner-price {
+                    padding-top: 20px;
+                    display: flex;
+                    gap: 20px;
+                    font-size: 32px;
+
+                    h3 {
+                        font-weight: 300;
+                    }
+
+                }
+
+                .banner-btn {
+                    margin-top: 50px;
+
+                    button {
+                        padding: 10px 20px;
+                    }
+
+                }
+
+
+
+            }
+        }
+
+
+    }
+
+    #product {
+        .product {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+    }
+
+    #collection {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .collection {
+            display: flex;
+
+            .collection-image {
+                max-width: 60%;
+
+                img {
+                    max-width: 100%;
+
+                }
+            }
+
+            .collection-text {
+                p {
+                    letter-spacing: 2.8;
+                    font-style: normal;
+                }
+
+                h2 {
+                    font-size: 40px;
+                    text-transform: uppercase;
+                }
+
+
+            }
+
+        }
+
+    }
+    #carousel{
+        .carousel{
+            grid-template-columns: 1fr ;
+        }
+    }
+
+    #denim {
+        .denim {
+            .denim-text {
+                h2 {
+                    font-size: 40px;
+                }
+
+            }
+        }
+
+
+    }
+    footer{
+        .footer{
+            flex-direction: column;
+            .ul2{
+                .ul22{
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+        }
+    }
+
+
+}
